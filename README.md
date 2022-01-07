@@ -16,7 +16,7 @@ Our aim with this work is to create a reliable (e.g., passive voice judgments ar
  In whatever coding environment you are, try creating a file. In Visual Studio, we right-click on the left side of the page and select “New File”. Type in the name and make sure to add “.ipynb” at the end.
 
 
-![1]("Images/1.jpg")
+![1](Images/1.jpg)
 
 
 
@@ -24,7 +24,7 @@ Our aim with this work is to create a reliable (e.g., passive voice judgments ar
 Name this file whatever you’d like. Just make sure that you add “ipynb” at the end. Here, we name our file “tutorial.ipynb”.
 
 
-![2-1]("Images/2-1.png")
+![2-1](Images/2-1.png)
 
 
 
@@ -38,7 +38,7 @@ Name this file whatever you’d like. Just make sure that you add “ipynb” at
 !pip install PassivePy==0.2.2
 ```
 
-![2]("Images/2.png")
+![2](Images/2.png)
 
 
 ### Step 5.
@@ -50,7 +50,7 @@ passivepy = PassivePy.PassivePyAnalyzer(spacy_model)
 ```
 
 
-![3]("Images/3.png")
+![3](Images/3.png)
 
 
 
@@ -68,7 +68,7 @@ result_1
 
 
 
-![4]("Images/4.png")
+![4](Images/4.png)
 
 
 ### Parsing Sentences
@@ -79,7 +79,7 @@ passivepy.parse_sentence(sample_text)
 ```
 
 
-![Image]("Images/5.png")
+![Image](Images/5.png)
 
 As you can see all words are listed on top and their DEP (dependency), POS (coarse-grained POS tags), TAG (fine-grained part of speech tags), LEMMA (canonical form) are listed below them. For detailed explanations on these tags, please visit: [Stanford Dependencies Manual](https://downloads.cs.stanford.edu/nlp/software/dependencies_manual.pdf) or [spaCy’s Glossary](https://github.com/explosion/spaCy/blob/master/spacy/glossary.py).
 
@@ -91,7 +91,7 @@ As you can see all words are listed on top and their DEP (dependency), POS (coar
 For analyzing datasets in Python, we first need to import Pandas, with which we can read a dataset. Then, we specify the path to our dataset (where it is on our system) in the read_csv (for csv files) or read_xlsx (for excel files) to read the dataset. For our case, the dataset is on the Desktop and is named “sample_file.csv” if you want to find the path, just right-click on the file and copy the location property. Then extend the file path by adding the name of the file:
 
 
-![Image]("Images/6.png")
+![Image](Images/6.png)
 
 ```
 import pandas as pd
@@ -128,7 +128,7 @@ Here are short descriptions of each column you see in the outputs:
 
 
 
-![Image]("Images/7.png")
+![Image](Images/7.png)
 
 
 
@@ -157,7 +157,7 @@ df_detected_c
 | passive_sents_percentage           | Proportion of passive sentences to the total number of sentences |  
 
 
-![Image]("Images/8.png")
+![Image](Images/8.png)
 
 
 
@@ -206,7 +206,7 @@ clean(text, regex_patterns)
 ```
 
 
-![Image]("Images/10.png")
+![Image](Images/10.png)
 
 after cleaning the text, you can use it as an input to the package:
 
@@ -228,5 +228,5 @@ df_detected_c
 ```
 
 
-![Image]("Images/11.png")
+![Image](Images/11.png)
 
