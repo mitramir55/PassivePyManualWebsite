@@ -150,3 +150,66 @@ raw_passive_count:
 | passive_match(es)           | The part of the record detected as passive voice |  
 | raw_passive_count           | Number of passive forms detected in the sentence |  
 
+
+
+
+# OPTIONAL, BUT USEFUL:
+
+1.	You can have pictures of words’ roles and their relationships with the following lines of code:
+```
+import spacy
+from spacy import displacy
+spacy_model = "en_core_web_lg"
+nlp = spacy.load(spacy_model)
+doc = nlp(text)
+displacy.serve(doc, style = "dep", options={"compact":False})
+```
+
+
+
+2.	You can clean your text with the following function. This removes all the unnecessary parts of a text (e.g., links, punctuations, and custom patterns) that might come in the way of your analysis and make your text unstructured.
+```
+import regex as re
+regex_patterns = ['SECTION \d']
+
+
+def clean(text, regex_patterns):
+    if regex_patterns:
+        for pattern in regex_patterns:
+            text = re.sub(pattern, '', text)
+    
+    text = re.sub(r"\S*https?:\S*", "", text)
+    text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r'[^ \w\.\!\?\-\(\)\,]', ' ', text) 
+    text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r' +(?![i])[a-zA-Z] +', ' ', text)
+    text = re.sub(r'\s+', ' ', text)
+    
+    
+    return text
+
+text = "Hi everyone!~~~ O Check out our package! \t https://github.com/mitramir55/PassivePy SECTION 5 Awsome!"
+clean(text, regex_patterns)
+```
+
+
+
+after cleaning the text, you can use it as an input to the package:
+```
+sample_text = clean("Natural resources are exhausted by humans.", regex_patterns)
+resutl_1 = passivepy.match_text(sample_text, full_passive=True, truncated_passive=True)
+resutl_1
+
+If you want to clean the text present in a column, you should first create a new column (for example called cleaned_text) and apply the cleaning function of all of the “Sentence” column records. Then, this “cleaned_text” column will be used for our analysis. 
+
+
+df.loc[:, 'cleaned_text'] = df.loc[:, 'Sentence'].apply(lambda x: clean(x, regex_patterns))
+
+df_detected_c = passivepy.match_corpus_level(df, column_name='cleaned_text', n_process = 1,
+                                            batch_size = 1000, add_other_columns=False,
+                                            truncated_passive=False, full_passive=False)
+df_detected_c
+```
+
+
+
