@@ -145,6 +145,7 @@ df_detected_c
 
 1.	You can have pictures of words’ roles and their relationships with the following lines of code:
 
+
 ```
 import spacy
 from spacy import displacy
@@ -157,6 +158,7 @@ displacy.serve(doc, style = "dep", options={"compact":False})
 
 
 2.	You can clean your text with the following function. This removes all the unnecessary parts of a text (e.g., links, punctuations, and custom patterns) that might come in the way of your analysis and make your text unstructured.
+
 
 ```
 import regex as re
@@ -184,6 +186,7 @@ clean(text, regex_patterns)
 ```
 
 after cleaning the text, you can use it as an input to the package:
+
 
 ```
 sample_text = clean("Natural resources are exhausted by humans.", regex_patterns)
