@@ -15,7 +15,7 @@ Our aim with this work is to create a reliable (e.g., passive voice judgments ar
  In whatever coding environment you are, try creating a file. In Visual Studio, we right-click on the left side of the page and select “New File”. Type in the name and make sure to add “.ipynb” at the end.
 
 
-![Image](https://github.com/mitramir55/PassivePyWeb/blob/main/Images/1.png)
+![Image](https://github.com/mitramir55/PassivePyWeb/blob/main/Images/1.PNG)
 
 
 
