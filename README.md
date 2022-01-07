@@ -24,7 +24,9 @@ Our aim with this work is to create a reliable (e.g., passive voice judgments ar
 Name this file whatever you’d like. Just make sure that you add “ipynb” at the end. Here, we name our file “tutorial.ipynb”.
 
 
-![Image](https://github.com/mitramir55/PassivePyWeb/blob/main/Images/2-1.png)
+![Image]("Images/2-1.png")
+
+
 
 ### Step 4.
  As you can see a cell has appeared on the page for us to start our code. First, we have to make sure that your system has all the requirements needed for the analysis. These requirements have been previously collected in a file and all you need to do is use !pip install to install them. Along with these requirements, we use another line of code to install the package itself. For all this, you can just copy and paste the following two lines.
@@ -36,7 +38,7 @@ Name this file whatever you’d like. Just make sure that you add “ipynb” at
 !pip install PassivePy==0.2.2
 ```
 
-![Image](https://github.com/mitramir55/PassivePyWeb/blob/main/Images/2.png)
+![Image]("Images/2.png")
 
 
 ### Step 5.
@@ -46,6 +48,10 @@ from PassivePySrc import PassivePy
 spacy_model = "en_core_web_lg"
 passivepy = PassivePy.PassivePyAnalyzer(spacy_model)
 ```
+
+
+![Image]("Images/3.png")
+
 
 
 ## Single-sentence Analysis
@@ -61,6 +67,10 @@ result_1
 ```
 
 
+
+![Image]("Images/4.png")
+
+
 ### Parsing Sentences
  
  If you had any question what tags each word had and which part of the text is passive, you can call the parse_sentence function of PassivePy:
@@ -68,18 +78,28 @@ result_1
 passivepy.parse_sentence(sample_text) 
 ```
 
+
+![Image]("Images/5.png")
+
 As you can see all words are listed on top and their DEP (dependency), POS (coarse-grained POS tags), TAG (fine-grained part of speech tags), LEMMA (canonical form) are listed below them. For detailed explanations on these tags, please visit: [Stanford Dependencies Manual](https://downloads.cs.stanford.edu/nlp/software/dependencies_manual.pdf) or [spaCy’s Glossary](https://github.com/explosion/spaCy/blob/master/spacy/glossary.py).
+
+
 
 
 ## Analyzing Datasets
 
 For analyzing datasets in Python, we first need to import Pandas, with which we can read a dataset. Then, we specify the path to our dataset (where it is on our system) in the read_csv (for csv files) or read_xlsx (for excel files) to read the dataset. For our case, the dataset is on the Desktop and is named “sample_file.csv” if you want to find the path, just right-click on the file and copy the location property. Then extend the file path by adding the name of the file:
 
+
+![Image]("Images/6.png")
+
 ```
 import pandas as pd
 path_to_file = r'C:\Users\Lenovo\Desktop\sample_file.csv'
 df = pd.read_csv(path_to_file)
 ```
+
+
 
 
 ### Sentence-level Analysis
@@ -108,6 +128,7 @@ Here are short descriptions of each column you see in the outputs:
 
 
 
+![Image]("Images/7.png")
 
 
 
@@ -134,6 +155,9 @@ df_detected_c
 | raw_passive_sents_count           | Number of sentences with passive voice |  
 | raw_sentence_count           | Number of sentences detected in the document |  
 | passive_sents_percentage           | Proportion of passive sentences to the total number of sentences |  
+
+
+![Image]("Images/8.png")
 
 
 
@@ -181,6 +205,9 @@ clean(text, regex_patterns)
 
 ```
 
+
+![Image]("Images/10.png")
+
 after cleaning the text, you can use it as an input to the package:
 
 
@@ -201,4 +228,5 @@ df_detected_c
 ```
 
 
+![Image]("Images/11.png")
 
