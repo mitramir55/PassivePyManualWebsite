@@ -74,7 +74,7 @@ As you can see all words are listed on top and their DEP (dependency), POS (coar
 
 ### Step 8.
 
- **Analyzing datasets**: 
+ **Analyzing datasets**
 
 For analyzing datasets in Python, we first need to import Pandas, with which we can read a dataset. Then, we specify the path to our dataset (where it is on our system) in the read_csv (for csv files) or read_xlsx (for excel files) to read the dataset. For our case, the dataset is on the Desktop and is named “sample_file.csv” if you want to find the path, just right-click on the file and copy the location property. Then extend the file path by adding the name of the file:
 
@@ -97,6 +97,20 @@ df_detected_s = passivepy.match_sentence_level(df, column_name='Sentence', n_pro
 df_detected_s
 ```
 
+Here are short descriptions of each column you see in the outputs:
+
+###  Sentence-level
+
+| Column Name        | Desctiption  |
+|:-------------|:------------------|
+| docId           | Initial index of the record in the input file | 
+| sentenceId | The ith sentence in one specific record | 
+| sentence           | The detected sentence | 
+| binary           | Whether passive was detected in that sentence | 
+| passive_match(es)           | The part of the record detected as passive voice |  
+| raw_passive_count           | Number of passive forms detected in the sentence |  
+
+
 
 
 
@@ -114,7 +128,6 @@ df_detected_c
 ```
 
 
-Here are short descriptions of each column you see in the outputs:
 
 ### Corpus-level
 
@@ -127,26 +140,6 @@ Here are short descriptions of each column you see in the outputs:
 | raw_passive_sents_count           | Number of sentences with passive voice |  
 | raw_sentence_count           | Number of sentences detected in the document |  
 | passive_sents_percentage           | Proportion of passive sentences to the total number of sentences |  
-
-
-###  Sentence-level
-
-: 
-: The ith sentence in one specific record
-sentence: 
-binary: Whether a passive was detected in that sentence
-passive_match(es): The part of the record detected as passive voice
-raw_passive_count: 
-
-| Column Name        | Desctiption  |       
-|:-------------|:------------------|
-| docId           | Initial index of the record in the input file | 
-| sentenceId | The ith sentence in one specific record | 
-| sentence           | The detected sentence | 
-| binary           | Whether passive was detected in that sentence | 
-| passive_match(es)           | The part of the record detected as passive voice |  
-| raw_passive_count           | Number of passive forms detected in the sentence |  
-
 
 
 
