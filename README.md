@@ -127,8 +127,6 @@ df_detected_c = passivepy.match_corpus_level(df, column_name='Sentence', n_proce
 df_detected_c
 ```
 
-
-
 ### Corpus-level
 
 | Column Name        | Desctiption  |       
