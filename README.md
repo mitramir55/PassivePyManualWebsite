@@ -71,7 +71,7 @@ passivepy.parse_sentence(sample_text)
 As you can see all words are listed on top and their DEP (dependency), POS (coarse-grained POS tags), TAG (fine-grained part of speech tags), LEMMA (canonical form) are listed below them. For detailed explanations on these tags, please visit: [Stanford Dependencies Manual](https://downloads.cs.stanford.edu/nlp/software/dependencies_manual.pdf) or [spaCy’s Glossary](https://github.com/explosion/spaCy/blob/master/spacy/glossary.py).
 
 
-## Analyzing datasets
+## Analyzing Datasets
 
 For analyzing datasets in Python, we first need to import Pandas, with which we can read a dataset. Then, we specify the path to our dataset (where it is on our system) in the read_csv (for csv files) or read_xlsx (for excel files) to read the dataset. For our case, the dataset is on the Desktop and is named “sample_file.csv” if you want to find the path, just right-click on the file and copy the location property. Then extend the file path by adding the name of the file:
 
