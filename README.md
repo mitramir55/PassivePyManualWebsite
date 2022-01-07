@@ -15,7 +15,7 @@ Our aim with this work is to create a reliable (e.g., passive voice judgments ar
  In whatever coding environment you are, try creating a file. In Visual Studio, we right-click on the left side of the page and select “New File”. Type in the name and make sure to add “.ipynb” at the end.
 
 
-![Image](https://github.com/mitramir55/PassivePyWeb/blob/main/Images/1.jpg)
+![1](https://github.com/mitramir55/PassivePyWeb/blob/main/Images/1.jpg)
 
 
 
@@ -44,4 +44,14 @@ After the code stops running you will see a message at the end of all the output
 from PassivePySrc import PassivePy
 spacy_model = "en_core_web_lg"
 passivepy = PassivePy.PassivePyAnalyzer(spacy_model)
+```
+
+
+### Step 6.
+
+ Sample Sentence Output: Now let’s experiment with PassivePy. Let’s say we have a sentence like “Natural resources are exhausted by humans.” And we would like to see if there’s any passive in this text. What we do is create a sample_text variable and input it to the function match_text of PassivePy. We want to see every type of passive, so we put True in front of truncated and full passive inside the brackets. 
+ ```
+sample_text = "Natural resources are exhausted by humans."
+resutl_1 = passivepy.match_text(sample_text, full_passive=True, truncated_passive=True)
+resutl_1
 ```
