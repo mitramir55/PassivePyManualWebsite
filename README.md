@@ -24,7 +24,7 @@ Our aim with this work is to create a reliable (e.g., passive voice judgments ar
 Name this file whatever you’d like. Just make sure that you add “ipynb” at the end. Here, we name our file “tutorial.ipynb”.
 
 
-![Image]("Images/2-1.png")
+![2-1]("Images/2-1.png")
 
 
 
@@ -38,7 +38,7 @@ Name this file whatever you’d like. Just make sure that you add “ipynb” at
 !pip install PassivePy==0.2.2
 ```
 
-![Image]("Images/2.png")
+![2]("Images/2.png")
 
 
 ### Step 5.
@@ -50,7 +50,7 @@ passivepy = PassivePy.PassivePyAnalyzer(spacy_model)
 ```
 
 
-![Image]("Images/3.png")
+![3]("Images/3.png")
 
 
 
@@ -68,7 +68,7 @@ result_1
 
 
 
-![Image]("Images/4.png")
+![4]("Images/4.png")
 
 
 ### Parsing Sentences
