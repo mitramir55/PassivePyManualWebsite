@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # PassivePy
 
 
@@ -49,9 +53,100 @@ passivepy = PassivePy.PassivePyAnalyzer(spacy_model)
 
 ### Step 6.
 
- Sample Sentence Output: Now let’s experiment with PassivePy. Let’s say we have a sentence like “Natural resources are exhausted by humans.” And we would like to see if there’s any passive in this text. What we do is create a sample_text variable and input it to the function match_text of PassivePy. We want to see every type of passive, so we put True in front of truncated and full passive inside the brackets. 
+ **Sample Sentence Output**: 
+ 
+ Now let’s experiment with PassivePy. Let’s say we have a sentence like “Natural resources are exhausted by humans.” And we would like to see if there’s any passive in this text. What we do is create a sample_text variable and input it to the function match_text of PassivePy. We want to see every type of passive, so we put True in front of truncated and full passive inside the brackets. 
  ```
 sample_text = "Natural resources are exhausted by humans."
 resutl_1 = passivepy.match_text(sample_text, full_passive=True, truncated_passive=True)
 resutl_1
 ```
+
+
+### Step 7.
+
+ **Parsing Sentences**: 
+ 
+ If you had any question what tags each word had and which part of the text is passive, you can call the parse_sentence function of PassivePy:
+ ```
+passivepy.parse_sentence(sample_text) 
+```
+
+As you can see all words are listed on top and their DEP (dependency), POS (coarse-grained POS tags), TAG (fine-grained part of speech tags), LEMMA (canonical form) are listed below them. For detailed explanations on these tags, please visit: [Stanford Dependencies Manual](https://downloads.cs.stanford.edu/nlp/software/dependencies_manual.pdf) or [spaCy’s Glossary](https://github.com/explosion/spaCy/blob/master/spacy/glossary.py).
+
+
+### Step 8.
+
+ **Analyzing datasets**: 
+
+For analyzing datasets in Python, we first need to import Pandas, with which we can read a dataset. Then, we specify the path to our dataset (where it is on our system) in the read_csv (for csv files) or read_xlsx (for excel files) to read the dataset. For our case, the dataset is on the Desktop and is named “sample_file.csv” if you want to find the path, just right-click on the file and copy the location property. Then extend the file path by adding the name of the file:
+
+```
+import pandas as pd
+path_to_file = r'C:\Users\Lenovo\Desktop\sample_file.csv'
+df = pd.read_csv(path_to_file)
+```
+
+### Step 9.
+
+ **Sentence-level Analysis**: 
+
+ In this type of analysis, each row of a specific column (in this case our text is in the column named Sentences) will be broken down in sentences, and then their passives will be identified and put in separate columns.
+
+```
+df_detected_s = passivepy.match_sentence_level(df, column_name='Sentence', n_process = 1,
+                                                batch_size = 1000, add_other_columns=True,
+                                                truncated_passive=False, full_passive=False)
+df_detected_s
+```
+
+
+
+
+
+### Step 10.
+
+ **Corpus-level Analysis**: 
+
+ In this type, each record will be viewed as a whole and all passives will be extracted, then various measures (such as percentage of passive, number of sentences, etc.) will be calculated for each record.
+ ```
+df_detected_c = passivepy.match_corpus_level(df, column_name='Sentence', n_process = 1,
+                                            batch_size = 1000, add_other_columns=True,
+                                            truncated_passive=False, full_passive=False)
+df_detected_c
+```
+
+
+Here are short descriptions of each column you see in the outputs:
+
+### Corpus-level
+
+| Column Name        | Desctiption  |       
+|:-------------|:------------------|
+| document           | Records in the input data frame | 
+| binary | Whether a passive was detected in that document | 
+| passive_match(es)           | Parts of the document detected as passive | 
+| raw_passive_count           | Number of passive voices detected in the sentence | 
+| raw_passive_sents_count           | Number of sentences with passive voice |  
+| raw_sentence_count           | Number of sentences detected in the document |  
+| passive_sents_percentage           | Proportion of passive sentences to the total number of sentences |  
+
+
+###  Sentence-level
+
+: 
+: The ith sentence in one specific record
+sentence: 
+binary: Whether a passive was detected in that sentence
+passive_match(es): The part of the record detected as passive voice
+raw_passive_count: 
+
+| Column Name        | Desctiption  |       
+|:-------------|:------------------|
+| docId           | Initial index of the record in the input file | 
+| sentenceId | The ith sentence in one specific record | 
+| sentence           | The detected sentence | 
+| binary           | Whether passive was detected in that sentence | 
+| passive_match(es)           | The part of the record detected as passive voice |  
+| raw_passive_count           | Number of passive forms detected in the sentence |  
+
