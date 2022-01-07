@@ -6,4 +6,13 @@ Our aim with this work is to create a reliable (e.g., passive voice judgments ar
 
 * * *
 ## Manual
-STEP 1. Open your Python coding environment. We will use visual studio for this tutorial and suggest you install it too if you don’t already have a coding environment (link for installation). Make sure to install Python and Jupyter notebook by clicking on the Extensions icon (or ctrl + shift + x) and searching for python and Jupyter notebook.
+### Step 1.
+ Open your Python coding environment. We will use visual studio for this tutorial and suggest you install it too if you don’t already have a coding environment (link for installation). Make sure to install Python and Jupyter notebook by clicking on the Extensions icon (or ctrl + shift + x) and searching for python and Jupyter notebook.
+
+
+### Step 2.
+ In whatever coding environment you are, try creating a file. In Visual Studio, we right-click on the left side of the page and select “New File”. Type in the name and make sure to add “.ipynb” at the end.
+
+
+![Image](https://github.com/mitramir55/PassivePyWeb/blob/main/Images/1.png)
+
