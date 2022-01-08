@@ -43,6 +43,7 @@ Name this file whatever you’d like. Just make sure that you add “ipynb” at
 
 ### Step 5.
 After the code stops running you will see a message at the end of all the outputted text that says, “PassivePy has been successfully installed”. Then, we can easily import and initial the package with the following lines:
+
 ```
 from PassivePySrc import PassivePy
 spacy_model = "en_core_web_lg"
@@ -81,14 +82,14 @@ passivepy.parse_sentence(sample_text)
 
 ![Image](Images/5.png)
 
-As you can see all words are listed on top and their DEP (dependency), POS (coarse-grained POS tags), TAG (fine-grained part of speech tags), LEMMA (canonical form) are listed below them. For detailed explanations on these tags, please visit: [Stanford Dependencies Manual](https://downloads.cs.stanford.edu/nlp/software/dependencies_manual.pdf) or [spaCy’s Glossary](https://github.com/explosion/spaCy/blob/master/spacy/glossary.py).
+As you can see all words are listed on top and their `DEP` (dependency), `POS` (coarse-grained POS tags), `TAG` (fine-grained part of speech tags), `LEMMA` (canonical form) are listed below them. For detailed explanations on these tags, please visit: [Stanford Dependencies Manual](https://downloads.cs.stanford.edu/nlp/software/dependencies_manual.pdf) or [spaCy’s Glossary](https://github.com/explosion/spaCy/blob/master/spacy/glossary.py).
 
 
 
 
 ## Analyzing Datasets
 
-For analyzing datasets in Python, we first need to import Pandas, with which we can read a dataset. Then, we specify the path to our dataset (where it is on our system) in the read_csv (for csv files) or read_xlsx (for excel files) to read the dataset. For our case, the dataset is on the Desktop and is named “sample_file.csv” if you want to find the path, just right-click on the file and copy the location property. Then extend the file path by adding the name of the file:
+For analyzing datasets in Python, we first need to import Pandas, with which we can read a dataset. Then, we specify the path to our dataset (where it is on our system) in the `read_csv` (for csv files) or `read_xlsx` (for excel files) to read the dataset. For our case, the dataset is on the Desktop and is named “sample_file.csv” if you want to find the path, just right-click on the file and copy the location property. Then extend the file path by adding the name of the file:
 
 
 ![Image](Images/6.png)
@@ -230,3 +231,6 @@ df_detected_c
 
 ![Image](Images/11.png)
 
+
+
+We hope you enjoyed using our package!
