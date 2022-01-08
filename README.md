@@ -35,7 +35,7 @@ Name this file whatever you’d like. Just make sure that you add “ipynb” at
 
 ```
 !pip install -r https://raw.githubusercontent.com/mitramir55/PassivePy/main/PassivePyCode/PassivePySrc/requirements_lg.txt
-!pip install PassivePy==0.2.2
+!pip install PassivePy==0.2.13
 ```
 
 ![2](Images/2.png)
