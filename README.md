@@ -1,9 +1,8 @@
 
 # PassivePy 
 
-
 * * *
-## Manual
+## PassivePy Manual
 ### Step 1.
  Open your Python coding environment. We will use visual studio for this tutorial and suggest you install it too if you don’t already have a coding environment (link for installation). Make sure to install Python and Jupyter notebook by clicking on the Extensions icon (or ctrl + shift + x) and searching for python and Jupyter notebook.
 
